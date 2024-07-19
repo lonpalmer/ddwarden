@@ -1,7 +1,8 @@
 # Ignore Gradle project-specific cache directory
 .gradle
 
-*.dungeondraft_pack
 
 # Ignore Gradle build output directory
 build
+src/test/resources/*.dungeondraft_pack
+
