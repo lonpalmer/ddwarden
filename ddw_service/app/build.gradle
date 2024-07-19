@@ -40,7 +40,6 @@ dependencies {
 
     implementation 'me.tongfei:progressbar:0.10.1'
 
-    implementation 'com.intellij:forms_rt:7.0.3'
 
 
 }

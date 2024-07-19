@@ -1,0 +1,37 @@
+= Dungeon Draft Warden
+L. Palmer
+
+== Hello
+
+I wrote this program because I was tired of watching DungeonDraft constantly crash while trying to process the thumbnails for the packs I purchased.  This little tool will generate the thumbnails for a all the packs in a directory or a single pack.
+
+
+
+== Java Required
+
+This program requires Java 21 or greater.  You can download it from the Oracle website, or you can install it using your favorite package manager. All development was done using OpenJDK.
+
+== Downloading
+
+You can download the program using the Releases link in Github.  There you will find the ddtools.jar.  Or you can build it yourself using the Gradle wrapper.
+
+== Running
+
+The command to run the program is:
+
+[source,bash]
+----
+java -jar ./ddtool.jar [-oh] [Srouce] [Destination]
+----
+
+|===
+| Argument | Description
+| [Srouce] | The directory where the Dungeon Draft Pack files are located or the path to a single pack.
+| [Destination] | The directory where the program will place the generated thumbnails.
+| -o | *Optional* Overwrite the thumbnails if they already exist.  Currently, ddtool will skip any that have already been created.
+| -h | *Optional* Display the help message.
+|===
+
+== License
+
+This software is available under the MIT License.  Please see the LICENSE.adoc file for more information.
