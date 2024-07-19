@@ -4,5 +4,5 @@
 
 # Ignore Gradle build output directory
 build
-src/test/resources/*.dungeondraft_pack
 
+/app/src/test/resources/*.dungeondraft_pack
