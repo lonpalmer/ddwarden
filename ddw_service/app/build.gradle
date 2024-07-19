@@ -1,0 +1,84 @@
+
+plugins {
+    id 'groovy'
+    id 'application'
+    id("io.freefair.lombok") version "8.4"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+
+
+dependencies {
+
+    implementation libs.logback
+
+    testImplementation platform('org.apache.groovy:groovy-bom:4.0.22')
+    testImplementation 'org.apache.groovy:groovy-all:4.0.22'
+    testImplementation platform("org.spockframework:spock-bom:2.3-groovy-4.0")
+    testImplementation "org.spockframework:spock-core"
+    testImplementation libs.junit
+
+    implementation libs.dagger
+    implementation libs.dagger.compiler
+    testAnnotationProcessor 'com.google.dagger:dagger-compiler:2.51'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.51'
+    implementation libs.jackson.databind
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation libs.guava
+
+    // implementation 'com.twelvemonkeys.imageio:imageio-webp:3.11.0'
+    implementation('io.github.darkxanter:webp-imageio:0.3.3')
+
+    implementation 'info.picocli:picocli:4.7.6'
+    annotationProcessor 'info.picocli:picocli-codegen:4.7.6'
+
+    implementation 'me.tongfei:progressbar:0.10.1'
+
+    implementation 'com.intellij:forms_rt:7.0.3'
+
+
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+compileGroovy {
+    groovyOptions.javaAnnotationProcessing = true
+}
+
+
+
+
+shadowJar {
+    //
+    archiveBaseName = 'ddtool'
+    archiveClassifier = ''
+}
+
+application {
+    mainClass = 'com.lon.App'
+}
+
+tasks.named('test') {
+    jvmArgs(['--enable-preview'])
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+    it.options.compilerArgs.add("-Aproject=${project.group}/${project.name}")
+}
+
+build.dependsOn('shadowJar')
+
+
+
