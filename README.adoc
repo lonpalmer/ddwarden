@@ -13,7 +13,8 @@ This program requires Java 21 or greater.  You can download it from the Oracle w
 
 == Downloading
 
-You can download the program using the Releases link in Github.  There you will find the ddtools.jar.  Or you can build it yourself using the Gradle wrapper.
+You can download the program using the Releases link in Github. https://github.com/lonpalmer/ddwarden/releases/latest/download/ddtool.jar[Latest is here.]
+
 
 == Running
 
