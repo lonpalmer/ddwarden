@@ -27,14 +27,12 @@ import java.util.function.Consumer;
 @Slf4j
 public class ImageProcessor {
 
-    int DEFAULT_PX_HEIGHT = 64;
-
-    int TERRAIN_HEIGHT_PX = 160;
-    int TERRAIN_WIDTH_PX = 160;
-
-    int PATH_THUMBNAIL_HEIGHT_PX = 48;
-    int WALL_THUMBNAIL_HEIGHT_PX = 32;
-    int WALL_THUMBNAIL_MAX_WIDTH_PX = 228;
+    private static final int DEFAULT_PX_HEIGHT = 64;
+    private static final int TERRAIN_HEIGHT_PX = 160;
+    private static final int TERRAIN_WIDTH_PX = 160;
+    private static final int PATH_THUMBNAIL_HEIGHT_PX = 48;
+    private static final int WALL_THUMBNAIL_HEIGHT_PX = 32;
+    private static final int WALL_THUMBNAIL_MAX_WIDTH_PX = 228;
 
     public static final List<String> supportedImageFormats = List.of("webp", "png", "jpg", "jpeg");
 
